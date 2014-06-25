@@ -6,10 +6,10 @@ module Kcache
       hits = Rails.cache.read_multi(*keys)
       keys.each_with_index do |key, i|
         results[objects[i].id.to_i] = if hits.include?(key)
-                                  hits[key]
-                                else
-                                  objects[i].try(k)
-                                end
+                                        hits[key]
+                                      else
+                                        objects[i].try(k)
+                                      end
       end
       results
     end
