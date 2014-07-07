@@ -1,6 +1,8 @@
 module Kcache
   module MultiFetch
     def self.fetch_multi k, objects
+      return {} if objects.blank?
+      objects = objects.to_a.compact
       results = {}
       keys = objects.collect { |o| "#{o.class.base_class.name.downcase}/#{o.id.to_s}/#{k}" }
       hits = Rails.cache.read_multi(*keys)
