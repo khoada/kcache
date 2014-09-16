@@ -1,6 +1,7 @@
 # Kcache
 
-TODO: Write a gem description
+Provide method for multi_fetch value from an array objects.
+Make sure your system can run well even when memcached server is down.
 
 ## Installation
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Please configure memcached server (we have default configuration file on rails)
+Please include module Kcache to use the method as you want.
+You can write override method for your purpose if you need.
 
 ## Contributing
 
